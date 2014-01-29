@@ -1,0 +1,18 @@
+<h1>Welcome to Juan's List</h1>
+<div class="container">
+  Update your post!
+  <form action="/edit" method="post">
+    TItle <input type="text" name="title" value="<%= @hash["title"] %>"><br>
+    Description<input type="text" name="description" value="<%= @hash["description"] %>">
+    Price<input type="text" name="price" value="<%= @hash["price"] %>">
+    Contact<input type="text" name="contact" value="<%= @hash["contact"] %>">
+    <input type="hidden" name="id" value="<%= @hash["id"] %>">
+    <select name="category" >
+      <option value="1">Cars</option>
+      <option value="2">Household Items</option>
+      <option value="3">Books</option>
+    </select>
+    <input type="submit" value="Update">
+  </form>
+  <h1><%= @hash["title"] %></h1>
+</div>

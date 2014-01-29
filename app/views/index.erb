@@ -1,23 +1,17 @@
+<h1>Welcome to Juan's List</h1>
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  Create your post!
+  <form action="/posts" method="post">
+    TItle <input type="text" name="title"><br>
+    Description<input type="text" name="description">
+    Price<input type="text" name="price">
+    Contact<input type="text" name="contact">
+    <select name="category" >
+      <option value="1">Cars</option>
+      <option value="2">Household Items</option>
+      <option value="3">Books</option>
+    </select>
+    <input type="submit" value="make new post">
+  </form>
+  <h1><%= @hash["title"] %></h1>
 </div>
